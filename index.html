@@ -6,16 +6,16 @@
     <title>Simple Components</title>
     
     <!--Icons-->
-    <link rel="icon" href="images/appicon.ico">
+    <link rel="icon" href="imgs/appicon.ico">
     
     <!--Stylsheets-->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
     <body>
-        <div class="l-navbar">
+        <div class="l-navbar nav-theme">
             <div class="logo">
-                <img src="../images/logo.png">
+                <img src="./imgs/logo.png" alt="Insert Logo">
             </div>
             <div class="mobile-nav-button is-mobile">
                 <a href="javascript:void(0);" onclick="mobileMenu()">
@@ -23,43 +23,55 @@
                 </a> 
             </div>
             <div id="navlinks" class="l-nav-links">
-                <a href="./" class="is-active">Home</a>
-                <a href="./terms">Terms</a>
-                <a href="./privacy">Privacy</a>
-                <a href="./business">Businesses</a>
-                <a href="./contact">Contact Us</a> 
-                <a href="http://onelink.to/ek4xqr" class="is-mobile">Download Now!</a>
+                <a href="./" class="is-active ">Home</a>
+                <a href="./terms" class="is-mobile">Terms</a>
+                <a href="./privacy" class="is-mobile">Privacy</a>
             </div>
         </div>
-        <div id="body" class="l-vertstack">
-            <div class="l-section">
-                <h1>
-                    Simple Components made by Garrett Tallent
-                </h1>
-                <p>
-                    These components are just a bunch of simple modules I made over time developing websites that I guessed I would use again.
-                </p>    
+        <div id="front" class="l-front front-theme">
+            <div>
+                <h3>Simple Components V 0.1.2</h3>
+                <h4>Made by Garrett Tallent</h4>
             </div>
-            <div class="l-section">
-                <h1>Current Components</h1>
-                <h2>Layouts:</h2>
-                
-                <!--Simple Growing Grid Gallery of items-->
-                <div class="l-growgrid">
-                    <p class="rounded">Paragraph test</p>
-                    <div class="rounded"><a href=""><h1>Growing Grid</h1><div class="imgcontainer"><img src="imgs/gridimage.png"></div>Example</a></div>
-                    <div class="rounded"><a href=""><h1>Paged Grid</h1><div class="imgcontainer"><img src="imgs/horizontalgrid.png"></div></a></div>
-                    <div class="rounded"><a href=""><h1>Horizontal Grid</h1><div class="imgcontainer"><img src="imgs/horizontalgrid.png"></div></a></div>    
-                </div>   
+        
+            <h4 class="padding-bot-5">Get your website developed by me: <a href="https://github.com/Gare22">Garrett's GitHub</a></h4>
+        </div>
+        <div id="body" class="l-body">
+            <div class="l-growgrid">
+                <a href="navigation/">Navigation</a>
+                <a href="grids/">Grids</a>
+                <a href="forms/">Forms</a>
             </div>
         </div>
-        <div class="l-section">
-            <p>
-                Feel free to use these components in your sites. No sense reinventing the wheel that I reinvented.
-            </p>    
-        </div>
-        <div id="footer">
-            <h2>This is a footer</h2>
+        <div id="footer" class="l-foot foot-theme">   
+            <a href="./privacy">Privacy</a>
+            <a href="./terms">Terms</a>
         </div>
     </body>
+
+<!--Navmenu Script (for mobile button)-->
+<script>
+    function mobileMenu() {
+        var x = document.getElementById("navlinks");
+        if (x.className === "l-nav-links") {
+            x.className += " mobilebutton-is-pressed";
+        } else {
+            x.className = "l-nav-links";
+        }
+    }
+
+    
+</script>
+
+<!--Scroll Script, adds mobile shadow to navbar on scroll-->
+<script>
+    window.addEventListener('scroll',(e)=>{
+      const nav = document.querySelector('.nav-theme');
+      if(window.pageYOffset>0){
+        nav.classList.add("shadow");
+      }else{
+        nav.classList.remove("shadow");
+      }
+    });
+  </script>
 </html>
